@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Floating actions & sticky CTA
     initFloatingActions();
 
+    // Parallax effect
+    initParallax();
+
     // Set min date for appointment
     setMinDate();
 });
@@ -395,6 +398,36 @@ function setMinDate() {
         const dd = String(today.getDate()).padStart(2, '0');
         dateInput.setAttribute('min', `${yyyy}-${mm}-${dd}`);
     }
+}
+
+// ===========================
+// PARALLAX EFFECT
+// ===========================
+function initParallax() {
+    const parallaxImg = document.getElementById('heroParallax');
+    if (!parallaxImg) return;
+
+    // Disable parallax on mobile for performance
+    if (window.innerWidth < 768) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                const heroHeight = document.getElementById('home').offsetHeight;
+
+                // Only apply parallax while hero is in view
+                if (scrollY < heroHeight) {
+                    const translateY = scrollY * 0.4;
+                    parallaxImg.style.transform = `translate3d(0, ${translateY}px, 0)`;
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 }
 
 // ===========================
