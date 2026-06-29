@@ -2311,6 +2311,407 @@ input, select, textarea {
 }
 
 /* ===========================
+   SERVICES SECTION (Detailed)
+   =========================== */
+.services-section {
+    background: var(--white);
+}
+
+.services-category {
+    margin-bottom: 64px;
+}
+
+.services-category:last-child {
+    margin-bottom: 0;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 36px;
+    padding: 20px 28px;
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+}
+
+.category-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.category-icon i, .category-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.category-icon-blue {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.category-icon-pink {
+    background: linear-gradient(135deg, var(--accent-pink), #be185d);
+    box-shadow: 0 4px 14px rgba(236, 72, 153, 0.3);
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.category-subtitle {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-card);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.service-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.service-card:hover .service-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.service-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.2) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.service-card:hover .service-img-overlay {
+    opacity: 1;
+}
+
+.service-card-body {
+    padding: 20px 24px 24px;
+}
+
+.service-card-body h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    transition: color var(--transition-fast);
+}
+
+.service-card:hover .service-card-body h4 {
+    color: var(--primary-600);
+}
+
+.service-card-body p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ===========================
+   ENHANCED HOVER ANIMATIONS
+   =========================== */
+
+/* Department cards hover */
+.dept-card {
+    transition: all var(--transition-base);
+}
+
+.dept-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.dept-card:hover .dept-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.dept-icon {
+    transition: transform var(--transition-base);
+}
+
+/* Doctor cards hover */
+.doctor-card {
+    transition: all var(--transition-base);
+}
+
+.doctor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.doctor-card:hover .doctor-avatar-bg {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.doctor-avatar-bg {
+    transition: all var(--transition-base);
+}
+
+.doctor-card:hover .doctor-avatar-bg.doctor-avatar-pink {
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+}
+
+/* Why cards hover */
+.why-card {
+    transition: all var(--transition-base);
+}
+
+.why-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.15);
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+    color: var(--white);
+}
+
+.why-icon {
+    transition: all var(--transition-base);
+}
+
+.why-card:hover .why-card-number {
+    color: var(--primary-400);
+}
+
+/* Testimonial cards hover */
+.testimonial-card {
+    transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-200);
+}
+
+/* FAQ hover */
+.faq-item {
+    transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-200);
+}
+
+.faq-question:hover {
+    color: var(--primary-600);
+}
+
+/* Contact cards hover */
+.contact-card {
+    transition: all var(--transition-base);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-200);
+}
+
+.contact-card:hover .contact-card-icon {
+    transform: scale(1.1);
+}
+
+.contact-card-icon {
+    transition: transform var(--transition-base);
+}
+
+/* Footer links hover */
+.footer-links a {
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-400);
+    transition: width var(--transition-base);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-links a:hover {
+    color: var(--primary-300);
+    padding-left: 8px;
+}
+
+/* Social links hover */
+.social-link {
+    transition: all var(--transition-base) !important;
+}
+
+.social-link:hover {
+    transform: translateY(-4px) scale(1.15) !important;
+}
+
+/* Specialty tags hover */
+.specialty-tag {
+    transition: all var(--transition-fast);
+}
+
+.specialty-tag:hover {
+    background: var(--primary-100);
+    color: var(--primary-700);
+    transform: translateY(-2px);
+}
+
+/* Nav links hover underline effect */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-400);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 60%;
+}
+
+.navbar.scrolled .nav-link::after {
+    background: var(--primary-600);
+}
+
+/* Floating action buttons pulse */
+.fab-btn {
+    transition: all var(--transition-base);
+}
+
+.fab-btn:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Logo hover */
+.nav-logo {
+    transition: all var(--transition-base);
+}
+
+.nav-logo:hover {
+    transform: scale(1.03);
+}
+
+.nav-logo:hover .logo-icon {
+    transform: rotate(-5deg);
+    transition: transform var(--transition-base);
+}
+
+/* Dept link hover */
+.dept-link {
+    transition: all var(--transition-fast);
+}
+
+.dept-link:hover {
+    gap: 12px;
+    color: var(--primary-700);
+}
+
+/* ===========================
+   SERVICES RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .category-header {
+        padding: 16px 20px;
+    }
+
+    .category-title {
+        font-size: 1.25rem;
+    }
+
+    .service-img-wrapper {
+        height: 170px;
+    }
+
+    .service-img-overlay {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ===========================
    PRINT STYLES
    =========================== */
 @media print {
