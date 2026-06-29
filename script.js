@@ -327,8 +327,6 @@ function initFAQ() {
 // ===========================
 function initAppointmentForm() {
     const form = document.getElementById('appointmentForm');
-    const formSuccess = document.getElementById('formSuccess');
-    const newAppointmentBtn = document.getElementById('newAppointmentBtn');
 
     if (!form) return;
 
@@ -336,34 +334,49 @@ function initAppointmentForm() {
         e.preventDefault();
 
         const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="btn-loading"></span> Submitting...';
+        submitBtn.innerHTML = '<span class="btn-loading"></span> Redirecting...';
 
-        // Simulate form submission
+        // Gather form data
+        const name = document.getElementById('patientName').value.trim();
+        const phone = document.getElementById('patientPhone').value.trim();
+        const email = document.getElementById('patientEmail').value.trim();
+        
+        const departmentEl = document.getElementById('department');
+        const departmentText = departmentEl.options[departmentEl.selectedIndex].text;
+        
+        const date = document.getElementById('preferredDate').value;
+        
+        const timeEl = document.getElementById('preferredTime');
+        const timeText = timeEl.options[timeEl.selectedIndex].text;
+        
+        const message = document.getElementById('message').value.trim();
+
+        // Construct WhatsApp message
+        let waMessage = `*New Appointment Request*\n\n`;
+        waMessage += `*Name:* ${name}\n`;
+        waMessage += `*Phone:* ${phone}\n`;
+        if (email) waMessage += `*Email:* ${email}\n`;
+        waMessage += `*Department:* ${departmentText}\n`;
+        if (date) waMessage += `*Date:* ${date}\n`;
+        if (timeEl.value) waMessage += `*Time Slot:* ${timeText}\n`;
+        if (message) waMessage += `\n*Symptoms/Message:*\n${message}`;
+
+        // Hospital WhatsApp number
+        const waNumber = '919110561904';
+        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+
+        // Open WhatsApp in new tab
+        window.open(waUrl, '_blank');
+
+        // Reset form state
         setTimeout(() => {
-            form.style.display = 'none';
-            formSuccess.style.display = 'block';
-
-            // Scroll to success message
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            form.reset();
         }, 1500);
     });
-
-    if (newAppointmentBtn) {
-        newAppointmentBtn.addEventListener('click', () => {
-            form.reset();
-            form.style.display = 'block';
-            formSuccess.style.display = 'none';
-
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i data-lucide="send"></i> Submit Appointment Request';
-
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        });
-    }
 }
 
 // ===========================
