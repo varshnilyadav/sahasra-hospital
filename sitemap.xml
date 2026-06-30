@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.sahasrahospital.co.in/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Main Hospital Image -->
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/hospital.jpeg</image:loc>
+      <image:title>Sahasra Hospital Adilabad</image:title>
+      <image:caption>Best Multi-Specialty Hospital in Adilabad, Telangana</image:caption>
+    </image:image>
+
+    <!-- Doctor Image -->
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/DR.ramesh%20.jpeg</image:loc>
+      <image:title>Dr. Pawar Ramesh - Best Pulmonologist in Adilabad</image:title>
+      <image:caption>Expert Lung Specialist and Pulmonologist</image:caption>
+    </image:image>
+
+    <!-- Pulmonology Service Images -->
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/asthma.png</image:loc>
+      <image:title>Asthma Treatment</image:title>
+      <image:caption>Advanced Asthma Treatment in Adilabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/copd.png</image:loc>
+      <image:title>COPD Treatment</image:title>
+      <image:caption>Chronic Obstructive Pulmonary Disease (COPD) Care</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/tb.png</image:loc>
+      <image:title>Tuberculosis (TB) Treatment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/lung-cancer.png</image:loc>
+      <image:title>Lung Cancer Screening &amp; Treatment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/sleep-apnea.png</image:loc>
+      <image:title>Sleep Apnea Treatment</image:title>
+    </image:image>
+
+    <!-- Gynecology Service Images -->
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/delivery.png</image:loc>
+      <image:title>Normal &amp; Painless Delivery</image:title>
+      <image:caption>Best Maternity Hospital for Normal Delivery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/c-section.png</image:loc>
+      <image:title>Safe C-Section Surgery</image:title>
+      <image:caption>Expert Gynecologists for Safe C-Section in Adilabad</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/infertility.png</image:loc>
+      <image:title>Infertility Treatment</image:title>
+      <image:caption>Advanced Infertility Care and Consultation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/prenatal-care.png</image:loc>
+      <image:title>Prenatal &amp; Postnatal Care</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/womens-wellness.png</image:loc>
+      <image:title>Women's Wellness &amp; Screening</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sahasrahospital.co.in/images/gynecology.png</image:loc>
+      <image:title>Gynecology Treatments</image:title>
+    </image:image>
   </url>
 </urlset>
