@@ -2044,6 +2044,44 @@ input, select, textarea {
     color: var(--primary-400);
 }
 
+.footer-seo-tags {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-seo-tags h4 {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: var(--font-heading);
+}
+
+.seo-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.seo-tags-list a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.seo-tags-list a:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
 .footer-bottom {
     display: flex;
     align-items: center;
