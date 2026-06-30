@@ -514,6 +514,14 @@ input, select, textarea {
     color: var(--white);
 }
 
+.hero-tags-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -525,8 +533,40 @@ input, select, textarea {
     font-size: 0.85rem;
     font-weight: 500;
     backdrop-filter: blur(10px);
-    margin-bottom: 24px;
     color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-seo-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.seo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-fast);
+}
+
+.seo-tag:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.seo-tag i, .seo-tag svg {
+    width: 14px;
+    height: 14px;
+    color: #fbbf24;
 }
 
 .hero-badge i, .hero-badge svg {
